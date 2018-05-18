@@ -14,3 +14,15 @@ Apps:
 - MirrorOp prepared on the left desktop
 - Presentation on the middle desktop
 - HelloVR & PositionVR on the right desktop
+
+
+
+
+// React 360
+- Formerly known as ReactVR
+- You can imagine my surprise when I had all the slides ready and then React 360 was released
+- How to start
+- It's still React - state and events 
+- Surfaces 
+- 3D Models 
+- VR Demo
