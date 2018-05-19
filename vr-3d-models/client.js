@@ -10,22 +10,22 @@ function init(bundle, parent, options = {}) {
         ...options
     });
 
-    // // Render your app content to the default cylinder surface
-    // r360.renderToSurface(
-    //     r360.createRoot("vr_3d_models", {
-    //         /* initial props */
-    //     }),
-    //     r360.getDefaultSurface()
-    // );
-
     // Create a location two meters in front of the user, and one meter down
-    const location = new Location([0, -1, -2]);
+    const bunnyLocation = new Location([0, 0, -2]);
 
     // Render to this location
-    r360.renderToLocation(r360.createRoot("bunny"), location);
+    r360.renderToLocation(r360.createRoot("bunny"), bunnyLocation);
+
+    [400, -400].forEach(location => {
+        let rabbitLocation = new Location([location, 0, -20]);
+        r360.renderToLocation(r360.createRoot("rabbit"), rabbitLocation);
+
+        rabbitLocation = new Location([location, 0, 620]);
+        r360.renderToLocation(r360.createRoot("rabbit"), rabbitLocation);
+    });
 
     // Load the initial environment
-    r360.compositor.setBackground(r360.getAssetURL("360_world.jpg"));
+    r360.compositor.setBackground(r360.getAssetURL("grasspanorama.jpg"));
 }
 
 window.React360 = { init };
