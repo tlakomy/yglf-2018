@@ -29,7 +29,7 @@ export default class rabbit extends React.Component {
     componentDidMount() {
         this.spin();
         this.jumpValue.setValue(0);
-        setTimeout(() => this.jump(), Math.random() * 500);
+        setTimeout(() => this.jump(), Math.random() * 1000);
     }
 
     render() {

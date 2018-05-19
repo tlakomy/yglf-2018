@@ -1,0 +1,34 @@
+// This file contains the boilerplate to execute your React app.
+// If you want to modify your application's content, start in "index.js"
+
+import { ReactInstance, Surface } from "react-360-web";
+
+function init(bundle, parent, options = {}) {
+    const r360 = new ReactInstance(bundle, parent, {
+        // Add custom options here
+        fullScreen: true,
+        ...options
+    });
+
+    // Render your app content to the default cylinder surface
+    const myCylinderSurface = new Surface(
+        4000 /* width */,
+        600 /* height */,
+        Surface.SurfaceShape.Cylinder /* shape */
+    );
+    r360.renderToSurface(
+        r360.createRoot("vr_headset_demo", {
+            /* initial props */
+        }),
+        myCylinderSurface
+    );
+
+    // Load the initial environment
+    r360.compositor.setBackground(r360.getAssetURL("stars.png"));
+
+    const player = r360.compositor.createVideoPlayer('myplayer');
+    // Instantiate the video, but do not play it yet
+    player.setSource(r360.getAssetURL("puppies.mp4"), '2D');
+}
+
+window.React360 = { init };
