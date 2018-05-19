@@ -79,7 +79,13 @@ const images = {
     axis: require("./assets/axis.png"),
     hololens_video: require("./assets/hololens.mp4"),
     vr_beka: require("./assets/vr_beka.jpg"),
-    past: require("./assets/past.jpg")
+    past: require("./assets/past.jpg"),
+    olx: require("./assets/olx.png"),
+    explore: require("./assets/explore.jpg"),
+    react: require("./assets/react.jpg"),
+    fuck: require("./assets/fuck.jpg"),
+    surface: require("./assets/surface.jpg"),
+    future: require("./assets/future.jpg")
 };
 
 export default class Presentation extends React.Component {
@@ -91,16 +97,27 @@ export default class Presentation extends React.Component {
                 transitionDuration={500}
                 theme={theme}
             >
-                <Slide bgColor="primary">
-                    <Heading caps fit textColor="secondary">
+                <Slide bgColor="#5015e7">
+                    <Heading caps textColor="#00D8A1">
                         Journey through VR and AR with React
                     </Heading>
-                    <Text fontSize="50px" textColor="secondary" margin="50px 0 0 0">
+                    <Text
+                        fontSize="50px"
+                        textColor="#00D8A1"
+                        margin="50px 0 0 0"
+                    >
                         Tomasz Łakomy
                     </Text>
+                    <Image
+                        fit
+                        bgColor="#5015e7"
+                        src={images.olx.replace("/", "")}
+                        height="200"
+                        margin={0}
+                    />
                 </Slide>
-                <Slide bgImage={images.past.replace("/", "")}>
-                    <Heading fit bgColor="black" textColor="secondary">
+                <Slide bgDarken={0.75} bgImage={images.past.replace("/", "")}>
+                    <Heading fit caps textColor="white">
                         Let's go back to the past
                     </Heading>
                 </Slide>
@@ -115,16 +132,23 @@ export default class Presentation extends React.Component {
                     </Heading>
                     <List>
                         <Appear>
-                            <ListItem>IE8 😤</ListItem>
+                            <ListItem margin="10px 0 0 0">IE8 😤</ListItem>
                         </Appear>
                         <Appear>
-                            <ListItem>PWA? 🤔</ListItem>
+                            <ListItem margin="10px 0 0 0">PWA? 🤔</ListItem>
                         </Appear>
                         <Appear>
-                            <ListItem>Flexbox? 🤨</ListItem>
+                            <ListItem margin="10px 0 0 0">
+                                CSS Grid? 🤨
+                            </ListItem>
                         </Appear>
                         <Appear>
-                            <ListItem>jQuery 😍</ListItem>
+                            <ListItem margin="10px 0 0 0">
+                                Centering stuff in CSS? 🤯
+                            </ListItem>
+                        </Appear>
+                        <Appear>
+                            <ListItem margin="10px 0 0 0">jQuery 😍</ListItem>
                         </Appear>
                     </List>
                 </Slide>
@@ -158,16 +182,15 @@ export default class Presentation extends React.Component {
                         The Web can be so much more
                     </Heading>
                 </Slide>
-                <Slide>
+                <Slide
+                    bgDarken={0.75}
+                    bgImage={images.explore.replace("/", "")}
+                >
                     <Heading fit textColor="secondary">
-                        It's fun to explore 🎉
+                        It's fun to explore
                     </Heading>
                 </Slide>
-                <Slide>
-                    <Heading fit textColor="secondary">
-                        Now, we are living in the future 📅
-                    </Heading>
-                </Slide>
+                <Slide bgImage={images.future.replace("/", "")} />
                 <Slide>
                     <Heading fit textColor="secondary">
                         Future is weird
@@ -187,7 +210,7 @@ export default class Presentation extends React.Component {
                         In 2018, we can do more
                     </Heading>
                 </Slide>
-                <Slide>
+                <Slide bgDarken={0.6} bgImage={images.react.replace("/", "")}>
                     <Heading fit textColor="secondary">
                         React
                     </Heading>
@@ -199,7 +222,7 @@ export default class Presentation extends React.Component {
                         height="580"
                         margin={0}
                     />
-                    <Cite>
+                    <Cite textColor="secondary">
                         https://github.com/chentsulin/awesome-react-renderer
                     </Cite>
                 </Slide>
@@ -241,8 +264,8 @@ export default class Presentation extends React.Component {
                         A layer on top of real world
                     </Heading>
                 </Slide>
-                <Slide bgImage={images.marker.replace("/", "")}>
-                    <Heading fit textColor="secondary" bgColor="black">
+                <Slide bgDarken={0.75} bgImage={images.marker.replace("/", "")}>
+                    <Heading fit textColor="secondary">
                         Marker-based AR
                     </Heading>
                 </Slide>
@@ -270,7 +293,7 @@ export default class Presentation extends React.Component {
                         height="580"
                         margin={0}
                     />
-                    <Cite>
+                    <Cite textColor="secondary">
                         Source: Nitin Tulswani
                         https://github.com/nitin42/React-Web-AR
                     </Cite>
@@ -340,8 +363,8 @@ export default App;
                         source={`<Marker parameters={{ 
             preset: 'custom',
             type: 'pattern',
-            patternUrl: './reactfest.patt', 
-            url: './reactfest.patt'
+            patternUrl: './yglf2018.patt', 
+            url: './yglf2018.patt'
           }}>`}
                     />
                 </Slide>
@@ -352,7 +375,7 @@ export default App;
                 </Slide>
                 <Slide>
                     <Appear fid="1">
-                        <Heading size={2} caps fit textColor="white">
+                        <Heading size={2} caps fit textColor="secondary">
                             Virtual Reality
                         </Heading>
                     </Appear>
@@ -380,19 +403,28 @@ export default App;
                         </Heading>
                     </Slide>
                 </Magic>
+                <Magic>
+                    <Slide>
+                        <Heading size={2}>What is ReactVR?</Heading>
+                    </Slide>
+                    <Slide>
+                        <Heading size={2}>What was ReactVR?</Heading>
+                    </Slide>
+                </Magic>
+
                 <Slide>
                     <Heading size={2} fit>
-                        What is ReactVR?
+                        Quick story
                     </Heading>
                 </Slide>
-                <Slide bgColor="black">
-                    <Heading
-                        size={2}
-                        fit
-                        textColor="secondary"
-                        textFont="primary"
-                    >
-                        A framework for building VR apps using React
+
+                <Slide bgImage={images.fuck.replace("/", "")} />
+                <Slide>
+                    <Heading size={2} fit>
+                        React 360
+                    </Heading>
+                    <Heading size={2} fit>
+                        Create exciting 360 and VR experiences using React
                     </Heading>
                 </Slide>
                 <Slide>
@@ -403,12 +435,12 @@ export default App;
                 <Slide bgColor="black">
                     <Layout>
                         <Code size={2} fit textColor="secondary">
-                            npm install -g react-vr-cli
+                            npm install -g react-360-cli
                         </Code>
                     </Layout>
                     <Layout>
                         <Code size={2} fit textColor="secondary">
-                            react-vr init HelloVR
+                            react-360 init HelloVR
                         </Code>
                     </Layout>
                     <Layout>
@@ -427,37 +459,33 @@ export default App;
                     <CodePane
                         lang="javascript"
                         textSize={16}
+                        contentEditable="true"
                         source={`export default class HelloVR extends React.Component {
-  render() {
-    return (
-      <View>
-        <Pano source={asset('chess-world.jpg')}/>
-        <Text
-          style={{
-            backgroundColor: '#777879',
-            fontSize: 0.8,
-            fontWeight: '400',
-            layoutOrigin: [0.5, 0.5],
-            paddingLeft: 0.2,
-            paddingRight: 0.2,
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            transform: [{translate: [0, 0, -3]}],
-          }}>
-          hello
-        </Text>
-      </View>
-    );
-  }
-};`}
+    render() {
+        return (
+            <View style={styles.panel}>
+                <View style={styles.greetingBox}>
+                    <Text style={styles.greeting}>
+                        Welcome to React 360
+                    </Text>
+                </View>
+            </View>
+            );
+        }
+    };
+    
+    const styles = StyleSheet.create({
+        // define custom styles for your components
+    });
+    
+    AppRegistry.registerComponent('HelloVR', () => HelloVR);`}
                     />
                 </Slide>
                 <Slide>
                     <Heading size={2} fit>
-                        Positioning items in 3D space
+                        Runtime
                     </Heading>
                 </Slide>
-                <Slide bgImage={images.axis.replace("/", "")} />
                 <Slide bgColor="black" textColor="secondary">
                     <Heading
                         size={2}
@@ -465,33 +493,94 @@ export default App;
                         textColor="secondary"
                         textFont="primary"
                     >
-                        Transform properties
+                        Each React 360 application is made up of two pieces:
                     </Heading>
                     <List>
                         <Appear>
-                            <ListItem>Scale</ListItem>
+                            <ListItem>your React application</ListItem>
                         </Appear>
                         <Appear>
-                            <ListItem>Rotate</ListItem>
-                        </Appear>
-                        <Appear>
-                            <ListItem>Translate</ListItem>
-                        </Appear>
-                        <Appear>
-                            <ListItem>Matrix</ListItem>
-                        </Appear>
-                        <Appear>
-                            <ListItem>... and also - Flexbox!</ListItem>
+                            <ListItem>
+                                the code that turns your React components into
+                                3D elements
+                            </ListItem>
                         </Appear>
                     </List>
                 </Slide>
                 <Slide bgColor="black">
-                    <Heading
-                        size={2}
-                        fit
-                        textColor="secondary"
-                        textFont="primary"
-                    >
+                    <Heading size={2} textColor="secondary" textFont="primary">
+                        We refer to this second piece as the "runtime"
+                    </Heading>
+                </Slide>
+                <Slide
+                    bgDarken={0.75}
+                    bgImage={images.surface.replace("/", "")}
+                >
+                    <Heading fit caps textColor="secondary">
+                        Surfaces
+                    </Heading>
+                </Slide>
+                <Slide bgColor="black">
+                    <Heading size={1} textColor="secondary" textFont="primary">
+                        Surfaces
+                    </Heading>
+                    <List>
+                        <Appear>
+                            <ListItem>
+                                allow you to add 2D interfaces to your 3D space
+                            </ListItem>
+                        </Appear>
+                        <Appear>
+                            <ListItem>defined in the runtime</ListItem>
+                        </Appear>
+                        <Appear>
+                            <ListItem>
+                                React components are attached to them
+                            </ListItem>
+                        </Appear>
+                        <Appear>
+                            <ListItem>
+                                Two types:
+                                <List margin="10px 0 0 0">
+                                    <Appear>
+                                        <ListItem margin="0 0 0 30px">
+                                            Cylinder Surface
+                                        </ListItem>
+                                    </Appear>
+                                    <Appear>
+                                        <ListItem margin="0 0 0 30px">
+                                            Flat Surface
+                                        </ListItem>
+                                    </Appear>
+                                </List>
+                            </ListItem>
+                        </Appear>
+                    </List>
+                </Slide>
+                <Slide>
+                    <Heading fit caps textColor="secondary">
+                        3D objects
+                    </Heading>
+                </Slide>
+                <Slide>
+                    <CodePane
+                        lang="javascript"
+                        textSize={16}
+                        contentEditable="true"
+                        source={`
+    // to reference a GLTF2 model
+    <Entity source={{gltf2: asset('myModel.gltf')}} />
+    
+    // to reference an untextured OBJ model
+    <Entity source={{obj: asset('myModel.obj')}} />
+    
+    // to reference an OBJ with matching MTL file
+    <Entity source={{obj: asset('myModel.obj'), mtl: asset('myModel.mtl')}} />
+    `}
+                    />
+                </Slide>
+                <Slide>
+                    <Heading fit caps textColor="secondary">
                         Events
                     </Heading>
                 </Slide>
@@ -519,15 +608,23 @@ export default App;
                         </Appear>
                         <Appear>
                             <List>
-                                <ListItem>MouseInputEvent</ListItem>
+                                <ListItem margin="0 0 0 30px">
+                                    MouseInputEvent
+                                </ListItem>
                                 <Appear>
-                                    <ListItem>KeyboardInputEvent</ListItem>
+                                    <ListItem margin="0 0 0 30px">
+                                        KeyboardInputEvent
+                                    </ListItem>
                                 </Appear>
                                 <Appear>
-                                    <ListItem>TouchInputEvent</ListItem>
+                                    <ListItem margin="0 0 0 30px">
+                                        TouchInputEvent
+                                    </ListItem>
                                 </Appear>
                                 <Appear>
-                                    <ListItem>GamepadInputEvent</ListItem>
+                                    <ListItem margin="0 0 0 30px">
+                                        GamepadInputEvent
+                                    </ListItem>
                                 </Appear>
                             </List>
                         </Appear>
