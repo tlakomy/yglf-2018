@@ -112,7 +112,7 @@ class vr_headset_demo extends React.Component {
     }
 
     getChangeBackgroundButton() {
-        return this.state.activeCountry === 0 || this.state.hideButton ? (
+        return this.state.activeCountry === 0 && this.state.hideButton === false ? (
             <VrButton
                 onClick={() => {
                     Environment.setBackgroundVideo("myplayer");
@@ -149,7 +149,6 @@ class vr_headset_demo extends React.Component {
                 {panoramas.map((item, index) => (
                     <Prefetch key={index} source={asset(`${item}`)} />
                 ))}
-                <Prefetch key={"puppies"} source={asset("puppies.mp4")} />
                 <PointLight intensity={5} style={{ color: "white" }} />
                 <View
                     style={{

@@ -4397,6 +4397,10 @@ simple-plist@^0.2.1:
     bplist-parser "0.1.1"
     plist "2.0.1"
 
+simple-raycaster@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/simple-raycaster/-/simple-raycaster-1.1.0.tgz#93b00ad2087637b440e6eaab20c0de2ecfafa33f"
+
 single-line-log@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/single-line-log/-/single-line-log-1.1.2.tgz#c2f83f273a3e1a16edb0995661da0ed5ef033364"

@@ -2,6 +2,8 @@
 // If you want to modify your application's content, start in "index.js"
 
 import { ReactInstance, Surface } from "react-360-web";
+import SimpleRaycaster from "simple-raycaster";
+
 
 function init(bundle, parent, options = {}) {
     const r360 = new ReactInstance(bundle, parent, {
@@ -26,9 +28,12 @@ function init(bundle, parent, options = {}) {
     // Load the initial environment
     r360.compositor.setBackground(r360.getAssetURL("stars.png"));
 
-    const player = r360.compositor.createVideoPlayer('myplayer');
+    r360.controls.clearRaycasters();
+    r360.controls.addRaycaster(SimpleRaycaster);
+
+    const player = r360.compositor.createVideoPlayer("myplayer");
     // Instantiate the video, but do not play it yet
-    player.setSource(r360.getAssetURL("puppies.mp4"), '2D');
+    player.setSource(r360.getAssetURL("puppies.mp4"), "2D");
 }
 
 window.React360 = { init };
