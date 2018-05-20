@@ -1,6 +1,7 @@
 "use strict";
 
 import React from "react";
+import earth from "./earth";
 import {
     AppRegistry,
     Animated,
@@ -52,7 +53,7 @@ class vr_headset_demo extends React.Component {
                 format: "2D"
             });
         } else {
-            Environment.setBackgroundImage(asset("stars.png"), {
+            Environment.setBackgroundImage(asset("bioshock.png"), {
                 format: "2D"
             });
         }
@@ -112,7 +113,8 @@ class vr_headset_demo extends React.Component {
     }
 
     getChangeBackgroundButton() {
-        return this.state.activeCountry === 0 && this.state.hideButton === false ? (
+        return this.state.activeCountry === 0 &&
+            this.state.hideButton === false ? (
             <VrButton
                 onClick={() => {
                     Environment.setBackgroundVideo("myplayer");
@@ -120,7 +122,7 @@ class vr_headset_demo extends React.Component {
 
                     this.setState({
                         hideButton: true
-                    })
+                    });
                 }}
             >
                 <View
@@ -167,3 +169,4 @@ class vr_headset_demo extends React.Component {
 }
 
 AppRegistry.registerComponent("vr_headset_demo", () => vr_headset_demo);
+AppRegistry.registerComponent("earth", () => earth);

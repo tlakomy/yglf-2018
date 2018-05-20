@@ -1,7 +1,7 @@
 // This file contains the boilerplate to execute your React app.
 // If you want to modify your application's content, start in "index.js"
 
-import { ReactInstance, Surface } from "react-360-web";
+import { ReactInstance, Surface, Location } from "react-360-web";
 import SimpleRaycaster from "simple-raycaster";
 
 
@@ -26,7 +26,12 @@ function init(bundle, parent, options = {}) {
     );
 
     // Load the initial environment
-    r360.compositor.setBackground(r360.getAssetURL("stars.png"));
+    r360.compositor.setBackground(r360.getAssetURL("bioshock.png"));
+
+    const earthLocation = new Location([0, 5, -2]);
+
+    // Render to this location
+    r360.renderToLocation(r360.createRoot("earth"), earthLocation);
 
     r360.controls.clearRaycasters();
     r360.controls.addRaycaster(SimpleRaycaster);
