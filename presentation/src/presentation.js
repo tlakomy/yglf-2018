@@ -39,7 +39,8 @@ const theme = createTheme(
     {
         primary: "black",
         secondary: "#03A9FC",
-        tertiary: "#009D99"
+        tertiary: "#009D99",
+        quarternary: "#03A9FC"
     },
     {
         primary: "Open Sans Condensed",
@@ -93,7 +94,7 @@ export default class Presentation extends React.Component {
         return (
             <Deck
                 transition={["fade"]}
-                progress="pacman"
+                progress="bar"
                 transitionDuration={500}
                 theme={theme}
             >
